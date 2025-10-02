@@ -4,41 +4,38 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Новости — Мой сайт</title>
+  <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-  <div id="header">
-    <h1>Мой сайт — Новости</h1>
+  <div class="page-container">
+    <header class="header">Мой сайт — Новости</header>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+        <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+        <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+        <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h2 class="section-title">Последние новости</h2>
+
+      <article class="experience-card news-item">
+        <h3 class="experience-title">Старт нового проекта</h3>
+        <p class="experience-desc">Опубликовано: 01 октября 2025 — Автор: Иванов И.И.</p>
+        <p>Бла бла бла.</p>
+      </article>
+
+      <article class="experience-card news-item">
+        <h3 class="experience-title">Обновление материалов</h3>
+        <p class="experience-desc">Опубликовано: 28 сентября 2025 — Автор: Петров П.П.</p>
+        <p>Еще какой-то текст.</p>
+      </article>
+    </main>
+    <footer class="footer">© 2025 Мой сайт — Новости</footer>
   </div>
-
-  <nav id="menu">
-    <ul>
-      <li><a href="../index.html">Главная</a></li>
-      <li><a href="news.html">Новости</a></li>
-      <li><a href="practices.html">Практики</a></li>
-      <li><a href="goods.html">Товары</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
-
-  <main id="content">
-    <h2>Последние новости</h2>
-
-    <article class="news-item">
-      <h3>Старт нового проекта</h3>
-      <p class="meta">Опубликовано: 01 октября 2025 — Автор: Иванов И.И.</p>
-      <p>Бла бла бла.</p>
-    </article>
-
-    <article class="news-item">
-      <h3>Обновление материалов</h3>
-      <p class="meta">Опубликовано: 28 сентября 2025 — Автор: Петров П.П.</p>
-      <p>Еще какой-то текст.</p>
-    </article>
-
-  </main>
-
-  <footer id="footer">
-    <p>© 2025 Мой сайт — Новости</p>
-  </footer>
 </body>
 </html>

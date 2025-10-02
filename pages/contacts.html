@@ -4,41 +4,35 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Контакты — Мой сайт</title>
+  <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-  <div id="header">
-    <h1>Мой сайт — Контакты</h1>
+  <div class="page-container">
+    <header class="header">Мой сайт — Контакты</header>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+        <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+        <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+        <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h2 class="section-title">Связаться со мной</h2>
+
+      <section class="about-me">
+        <p><strong>Электронная почта:</strong> <a href="mailto:example@example.com">example@example.com</a></p>
+        <p><strong>Адрес:</strong> г. Москва, ул. Примерная, д. 1</p>
+        <p>
+          <button onclick="location.href='tel:+71234567890'" class="skill-tag" style="cursor:pointer;border:none;">Позвонить</button>
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">© 2025 Мой сайт — Контакты</footer>
   </div>
-
-  <nav id="menu">
-    <ul>
-      <li><a href="../index.html">Главная</a></li>
-      <li><a href="news.html">Новости</a></li>
-      <li><a href="practices.html">Практики</a></li>
-      <li><a href="goods.html">Товары</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
-
-  <main id="content">
-    <h2>Связаться со мной</h2>
-
-    <section class="contact-info">
-      <p><strong>Электронная почта:</strong> <a href="mailto:example@example.com">example@example.com</a></p>
-      <p><strong>Адрес:</strong> г. Москва, ул. Примерная, д. 1</p>
-      <p>
-        <strong>Телефон:</strong>
-        <a href="tel:+71234567890">+7 (123) 456-78-90</a>
-      </p>
-
-      <p>
-        <button onclick="location.href='tel:+71234567890'">Позвоните мне</button>
-      </p>
-    </section>
-  </main>
-
-  <footer id="footer">
-    <p>© 2025 Контакты</p>
-  </footer>
 </body>
 </html>

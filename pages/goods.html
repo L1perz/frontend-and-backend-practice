@@ -4,50 +4,50 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Товары — Мой сайт</title>
+  <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-  <div id="header">
-    <h1>Мой сайт — Портфолио</h1>
+  <div class="page-container">
+    <header class="header">Мой сайт — Товары</header>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+        <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+        <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+        <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h2 class="section-title">Каталог товаров</h2>
+
+      <section class="goods-list" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
+        <article class="experience-card good-card" style="max-width:260px;">
+          <img src="../images/goods1.png" alt="Товар 1" style="width:100%;height:160px;object-fit:cover;border-radius:8px;">
+          <h3 class="experience-title">Товар 1</h3>
+          <p class="experience-desc">Краткое описание товара. Отличное качество и быстрая доставка.</p>
+          <p class="profile-group">Цена: <strong>1 200 ₽</strong></p>
+        </article>
+
+        <article class="experience-card good-card" style="max-width:260px;">
+          <img src="../images/goods2.png" alt="Товар 2" style="width:100%;height:160px;object-fit:cover;border-radius:8px;">
+          <h3 class="experience-title">Товар 2</h3>
+          <p class="experience-desc">Удобный и практичный товар для повседневного использования.</p>
+          <p class="profile-group">Цена: <strong>2 500 ₽</strong></p>
+        </article>
+
+        <article class="experience-card good-card" style="max-width:260px;">
+          <img src="../images/goods3.png" alt="Товар 3" style="width:100%;height:160px;object-fit:cover;border-radius:8px;">
+          <h3 class="experience-title">Товар 3</h3>
+          <p class="experience-desc">Бюджетный вариант с достойными характеристиками.</p>
+          <p class="profile-group">Цена: <strong>799 ₽</strong></p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">© 2025 Мой сайт — Товары</footer>
   </div>
-
-  <nav id="menu">
-    <ul>
-      <li><a href="../index.html">Главная</a></li>
-      <li><a href="news.html">Новости</a></li>
-      <li><a href="practices.html">Практики</a></li>
-      <li><a href="goods.html">Товары</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
-
-  <main id="content">
-    <h2>Каталог товаров</h2>
-
-    <section class="goods-list">
-      <article class="good-card">
-        <img src="../images/goods1.png" alt="Товар 1" width="200" height="150">
-        <h3>Название товара 1</h3>
-        <p class="price">Цена: 1 200 ₽</p>
-      </article>
-
-      <article class="good-card">
-        <img src="../images/goods2.png" alt="Товар 2" width="200" height="150">
-        <h3>Название товара 2</h3>
-        <p class="price">Цена: 2 500 ₽</p>
-      </article>
-
-      <article class="good-card">
-        <img src="../images/goods3.png" alt="Товар 3" width="200" height="150">
-        <h3>Название товара 3</h3>
-        <p class="price">Цена: 799 ₽</p>
-      </article>
-
-  
-    </section>
-  </main>
-
-  <footer id="footer">
-    <p>© 2025 Моё имя — Все права защищены</p>
-  </footer>
 </body>
 </html>
