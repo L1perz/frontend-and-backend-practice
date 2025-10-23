@@ -384,7 +384,7 @@ body {
 }
 
 .contact-tag:hover {
-    transform: scale(0);
+    transform: scale(0.5);
 
     box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
 }
