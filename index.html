@@ -10,8 +10,8 @@
 
 <body>
     <div class="page-container">
-        <div class="header">Мой сайт</div>
-        <div class="nav">
+        <header class="header">Мой сайт</header>
+        <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
@@ -19,45 +19,57 @@
                 <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
             </ul>
-        </div>
-        <div class="content">
+        </nav>
+        <main class="content">
             <div class="profile-header">
                 <h1 class="profile-title">Информация об авторе</h1>
-                <img class="profile-photo" src="images/photo.png" alt="Фото
-автора">
+                <img class="profile-photo" src="images/photo.png" alt="Фото автора">
                 <h2 class="profile-name">Карчевский Лев Олегович</h2>
                 <p class="profile-group">ЭФБО-05-24</p>
             </div>
 
             <div class="about-me">
-                <p>Обо мне: Потерял 4000 часов своей жизни ради виртуальной медальки. Далее поступил в МИРЭА.
+                <h3>Обо мне</h3>
+                <p>Потерял 4000 часов своей жизни ради виртуальной медальки. Далее поступил в МИРЭА.
                 Устроилсяв МТС. Теперь пишу одноразовый сайт.</p>
             </div>
 
-            <div class="skills-container">
-                <div class="skill-tag">Навык 1</div>
-                <div class="skill-tag">Навык 2</div>
-                <div class="skill-tag">Навык 3</div>
-                <div class="skill-tag">Навык 4</div>
-            </div>
+            <h2 class = "section-title">Мои навыки</h2>
+            <section class="skills-container">
+                
+                <div class="skill-tag">
+                         <img src="images/icon2.png" alt="Навык 1"> 
+                </div>
+                <div class="skill-tag">
+                     <img src="images/icon1.png" alt="Навык 2">
+                </div>
+                <div class="skill-tag">
+                    <img src="images/icon4.png" alt="Навык 3">
+                </div>
+                <div class="skill-tag">
+                    <img src="images/icon3.png" alt="Навык 4">
+                </div>            
+            </section>
 
-            <div class="experience-section">
+           <div class="experience-section">
                 <h2 class="section-title">Мой опыт работы</h2>
+
                 <div class="experience-card">
-                    <h3 class="experience-title">Опыт 1</h3>
-                    <p class="experience-desc">Работал тренером. Тренировал своих друзей непрошеными советами.</p>
+                    <h3 class="experience-title">Киберспортивный тренер</h3>
+                    <p class="experience-desc">Помогал друзьям поднимать ранг и самооценку. Разрабатывал стратегии, которые срабатывали… иногда.</p>
                 </div>
+
                 <div class="experience-card">
-                    <h3 class="experience-title">Опыт 2</h3>
-                    <p class="experience-desc">Работал бустером. Делал чужие циферки больше.</p>
+                    <h3 class="experience-title">Бустер</h3>
+                    <p class="experience-desc">Повышал чужие рейтинги и настроение. Главное правило — «неважно, кто играет, главное — победа».</p>
                 </div>
+
                 <div class="experience-card">
-                    <h3 class="experience-title">Опыт 3</h3>
-                    <p class="experience-desc">Работал в МТС. Писал что-то на C++.
-                    </p>
+                    <h3 class="experience-title">C++ разработчик</h3>
+                    <p class="experience-desc">Занимался backend-разработкой на C++ в МТС. Писал код, который иногда даже компилировался с первого раза.</p>
                 </div>
             </div>
-        </div>
+        </main>
         
         
     </div>
