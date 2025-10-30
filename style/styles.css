@@ -1,8 +1,8 @@
-/* CSS переменные (Источник 51, 134, 271) */
+/* CSS переменные  */
 :root {
   --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
-  /* Цвета (Источник 272-276) */
+  /* Цвета  */
   --color-primary: #667eea;
   --color-primary-dark: #764ba2;
   --color-secondary: #ea66cd;
@@ -19,7 +19,7 @@
   --color-success: #2ecc71;
   --color-link: #4facfe;
 
-  /* Тени и границы (Источник 277, 281) */
+  /* Тени и границы  */
   --shadow-sm: 0 5px 20px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 8px 25px rgba(102, 126, 234, 0.3);
   --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -28,13 +28,13 @@
   --radius-lg: 15px;
   --radius-circle: 25px;
 
-  /* Отступы (Источник 282-286) */
+  /* Отступы  */
   --space-sm: 10px;
   --space-md: 20px;
   --space-lg: 30px;
   --space-xl: 40px;
 
-  /* Переходы (Источник 137) */
+  /* Переходы  */
   --transition: all 0.3s ease;
 }
 
@@ -46,7 +46,7 @@ body {
   background-color: var(--color-bg-light);
 }
 
-/* Блок page (Источник 301) */
+/* Блок page*/
 .page {
   margin: 0 auto;
   background: var(--color-text-light);
@@ -54,7 +54,7 @@ body {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Блок header (Источник 308) */
+/* Блок header  */
 .header {
   background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-dark-lighten) 100%);
   color: var(--color-text-light);
@@ -65,7 +65,7 @@ body {
   letter-spacing: 2px;
 }
 
-/* Блок nav (Источник 318) */
+/* Блок nav  */
 .nav {
   background: var(--color-bg-dark);
   padding: var(--space-md) 0;
@@ -93,20 +93,20 @@ body {
   font-weight: 500;
 }
 
-/* Псевдокласс состояния :hover (Источник 90) */
+/* Псевдокласс состояния :hover  */
 .nav__link:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
 
-/* Блок main (Источник 348) */
+/* Блок main */
 .main {
   padding: var(--space-xl);
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Блок profile (Источник 352) */
+/* Блок profile  */
 .profile {
   text-align: center;
   margin-bottom: var(--space-xl);
@@ -142,7 +142,7 @@ body {
   margin: 5px 0;
 }
 
-/* Блок about (Источник 384) */
+/* Блок about  */
 .about {
   background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-light-darken) 100%);
   padding: 25px;
@@ -162,7 +162,7 @@ body {
   margin-bottom: 0;
 }
 
-/* Блок skills (Источник 400) */
+/* Блок skills  */
 .skills {
   margin: var(--space-lg) 0;
 }
@@ -183,7 +183,7 @@ body {
   margin: var(--space-lg) 0;
 }
 
-/* Элемент skill (Источник 413) */
+/* Элемент skill  */
 .skill {
   background: linear-gradient(135deg, var(--color-link) 0%, #00f2fe 100%);
   color: var(--color-text-light);
@@ -259,7 +259,7 @@ body {
   text-align: center;
   margin-bottom: var(--space-lg);
   font-weight: 300;
-  grid-column: 1 / -1; /* Заголовок на всю ширину */
+  grid-column: 1 / -1; 
 }
 
 /* Блок good-card */
@@ -298,7 +298,7 @@ body {
   color: var(--color-text-muted);
   line-height: 1.6;
   margin: 0;
-  flex-grow: 1; /* Описание занимает оставшееся место */
+  flex-grow: 1; 
 }
 
 .good-card__price {
@@ -372,7 +372,7 @@ body {
   margin-bottom: var(--space-md);
 }
 
-/* Общий блок .button (Источник 143) */
+/* Общий блок .button */
 .button {
   padding: 12px 25px;
   border-radius: var(--radius-circle);
@@ -385,7 +385,7 @@ body {
   display: inline-block;
 }
 
-/* Модификатор --primary (Источник 150) */
+/* Модификатор --primary  */
 .button--primary {
   background: linear-gradient(135deg, #fe4f4f 0%, #b200fe 100%);
   color: var(--color-text-light);
@@ -472,7 +472,7 @@ dialog {
   box-sizing: border-box; /* Важно для 100% ширины */
 }
 
-/* Псевдокласс состояния :focus (Источник 92) */
+/* Псевдокласс состояния :focus */
 .form-group__input:focus,
 .form-group__select:focus,
 .form-group__textarea:focus {
