@@ -1,8 +1,8 @@
-/* CSS переменные  */
+
 :root {
   --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
-  /* Цвета  */
+
   --color-primary: #667eea;
   --color-primary-dark: #764ba2;
   --color-secondary: #ea66cd;
@@ -19,7 +19,6 @@
   --color-success: #2ecc71;
   --color-link: #4facfe;
 
-  /* Тени и границы  */
   --shadow-sm: 0 5px 20px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 8px 25px rgba(102, 126, 234, 0.3);
   --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -28,13 +27,11 @@
   --radius-lg: 15px;
   --radius-circle: 25px;
 
-  /* Отступы  */
   --space-sm: 10px;
   --space-md: 20px;
   --space-lg: 30px;
   --space-xl: 40px;
 
-  /* Переходы  */
   --transition: all 0.3s ease;
 }
 
@@ -46,7 +43,7 @@ body {
   background-color: var(--color-bg-light);
 }
 
-/* Блок page*/
+
 .page {
   margin: 0 auto;
   background: var(--color-text-light);
@@ -54,7 +51,7 @@ body {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Блок header  */
+
 .header {
   background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-dark-lighten) 100%);
   color: var(--color-text-light);
@@ -65,13 +62,12 @@ body {
   letter-spacing: 2px;
 }
 
-/* Блок nav  */
 .nav {
   background: var(--color-bg-dark);
   padding: var(--space-md) 0;
 }
 
-.nav__list {
+.nav__list{
   list-style: none;
   margin: 0;
   padding: 0;
@@ -84,7 +80,7 @@ body {
   margin: 0;
 }
 
-.nav__link {
+.nav__link{
   color: var(--color-text-light);
   text-decoration: none;
   padding: 12px 25px;
@@ -93,20 +89,19 @@ body {
   font-weight: 500;
 }
 
-/* Псевдокласс состояния :hover  */
 .nav__link:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
 
-/* Блок main */
+
 .main {
   padding: var(--space-xl);
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* Блок profile  */
+
 .profile {
   text-align: center;
   margin-bottom: var(--space-xl);
@@ -142,7 +137,7 @@ body {
   margin: 5px 0;
 }
 
-/* Блок about  */
+
 .about {
   background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-light-darken) 100%);
   padding: 25px;
@@ -162,7 +157,7 @@ body {
   margin-bottom: 0;
 }
 
-/* Блок skills  */
+
 .skills {
   margin: var(--space-lg) 0;
 }
@@ -183,7 +178,6 @@ body {
   margin: var(--space-lg) 0;
 }
 
-/* Элемент skill  */
 .skill {
   background: linear-gradient(135deg, var(--color-link) 0%, #00f2fe 100%);
   color: var(--color-text-light);
@@ -205,7 +199,7 @@ body {
   box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
 }
 
-/* Блок experience */
+
 .experience {
   margin-top: 50px;
 }
@@ -218,7 +212,7 @@ body {
   font-weight: 300;
 }
 
-/* Блок experience-card */
+
 .experience-card {
   background: var(--color-text-light);
   padding: 25px;
@@ -246,7 +240,7 @@ body {
   margin: 0;
 }
 
-/* Блок goods-grid */
+
 .goods-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -262,7 +256,7 @@ body {
   grid-column: 1 / -1; 
 }
 
-/* Блок good-card */
+
 .good-card {
   background: var(--color-text-light);
   padding: 25px;
@@ -307,7 +301,7 @@ body {
   margin-top: var(--space-md);
 }
 
-/* Блок news-list */
+
 .news-list__title {
   font-size: 28px;
   color: var(--color-text-dark);
@@ -316,7 +310,7 @@ body {
   font-weight: 300;
 }
 
-/* Блок news-item */
+
 .news-item {
   background: var(--color-text-light);
   padding: var(--space-lg);
@@ -346,7 +340,7 @@ body {
   margin: 0;
 }
 
-/* Блок contacts */
+
 .contacts {
   background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-light-darken) 100%);
   padding: 25px;
@@ -372,7 +366,7 @@ body {
   margin-bottom: var(--space-md);
 }
 
-/* Общий блок .button */
+
 .button {
   padding: 12px 25px;
   border-radius: var(--radius-circle);
@@ -385,7 +379,7 @@ body {
   display: inline-block;
 }
 
-/* Модификатор --primary  */
+
 .button--primary {
   background: linear-gradient(135deg, #fe4f4f 0%, #b200fe 100%);
   color: var(--color-text-light);
@@ -393,11 +387,11 @@ body {
 }
 
 .button--primary:hover {
-  transform: scale(0.95); /* Изменил сумасшедшую анимацию */
+  transform: scale(0.95); 
   box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
 }
 
-/* Модификатор --secondary */
+
 .button--secondary {
   background: var(--color-text-light);
   color: var(--color-text-dark);
@@ -407,12 +401,12 @@ body {
 }
 
 .button--secondary:hover {
-  transform: translateY(-3px); /* Изменил сумасшедшую анимацию */
+  transform: translateY(-3px); 
   box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
 }
 
 
-/* --- Стили для модального окна --- */
+
 
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.6);
@@ -469,10 +463,9 @@ dialog {
   border-radius: var(--radius-sm);
   font-size: 1rem;
   transition: border-color 0.3s ease;
-  box-sizing: border-box; /* Важно для 100% ширины */
+  box-sizing: border-box; 
 }
 
-/* Псевдокласс состояния :focus */
 .form-group__input:focus,
 .form-group__select:focus,
 .form-group__textarea:focus {
@@ -512,7 +505,7 @@ dialog {
   }
 }
 
-/* --- Адаптивность --- */
+
 @media (max-width: 768px) {
   .nav__list {
     flex-direction: column;
@@ -525,7 +518,7 @@ dialog {
   }
   
   .good-card {
-    max-width: 100%; /* Карточки на всю ширину на мобильных */
+    max-width: 100%; 
   }
 
   .main {
@@ -543,11 +536,11 @@ dialog {
 
   .button {
     width: 100%;
-    box-sizing: border-box; /* Кнопки на всю ширину в модалке */
+    box-sizing: border-box; 
   }
 }
 
-/* Блок footer */
+
 .footer {
   background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-dark-lighten) 100%);
   color: var(--color-text-light);
