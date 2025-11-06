@@ -84,6 +84,21 @@ body {
   justify-content: center;
   gap: 25px;
 }
+body.bg-light {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-fluid.p-0 {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-fluid.p-0 > main {
+    flex: 1 0 auto;
+}
 
 .nav__item {
   margin: 0;
