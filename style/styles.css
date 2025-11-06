@@ -1,8 +1,5 @@
-
 :root {
   --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
-
   --color-primary: #667eea;
   --color-primary-dark: #764ba2;
   --color-secondary: #ea66cd;
@@ -35,22 +32,34 @@
   --transition: all 0.3s ease;
 }
 
+[data-theme="dark"] {
+  --color-bg-light: #1a1a1a;
+  --color-bg-light-darken: #2d2d2d;
+  --color-text-light: #e0e0e0;
+  --color-text-dark: #ffffff;
+  --color-text-muted: #a0a0a0;
+  --color-border: #444;
+  --color-bg-dark: #121212;
+  --color-bg-dark-lighten: #2a2a2a;
+}
+
 body {
   font-family: var(--font-main);
   margin: 0;
   padding: 0;
   min-height: 100vh;
   background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+  transition: var(--transition);
 }
-
 
 .page {
   margin: 0 auto;
-  background: var(--color-text-light);
+  background: var(--color-bg-light);
   min-height: 100vh;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
 }
-
 
 .header {
   background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-dark-lighten) 100%);
@@ -94,13 +103,11 @@ body {
   transform: translateY(-2px);
 }
 
-
 .main {
   padding: var(--space-xl);
   max-width: 900px;
   margin: 0 auto;
 }
-
 
 .profile {
   text-align: center;
@@ -137,7 +144,6 @@ body {
   margin: 5px 0;
 }
 
-
 .about {
   background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-light-darken) 100%);
   padding: 25px;
@@ -156,7 +162,6 @@ body {
 .about__text {
   margin-bottom: 0;
 }
-
 
 .skills {
   margin: var(--space-lg) 0;
@@ -199,7 +204,6 @@ body {
   box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
 }
 
-
 .experience {
   margin-top: 50px;
 }
@@ -212,9 +216,8 @@ body {
   font-weight: 300;
 }
 
-
 .experience-card {
-  background: var(--color-text-light);
+  background: var(--color-bg-light);
   padding: 25px;
   margin: var(--space-md) 0;
   border-radius: var(--radius-md);
@@ -240,7 +243,6 @@ body {
   margin: 0;
 }
 
-
 .goods-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -253,12 +255,11 @@ body {
   text-align: center;
   margin-bottom: var(--space-lg);
   font-weight: 300;
-  grid-column: 1 / -1; 
+  grid-column: 1 / -1;
 }
 
-
 .good-card {
-  background: var(--color-text-light);
+  background: var(--color-bg-light);
   padding: 25px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
@@ -292,7 +293,7 @@ body {
   color: var(--color-text-muted);
   line-height: 1.6;
   margin: 0;
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
 .good-card__price {
@@ -300,7 +301,6 @@ body {
   color: var(--color-text-muted);
   margin-top: var(--space-md);
 }
-
 
 .news-list__title {
   font-size: 28px;
@@ -310,9 +310,8 @@ body {
   font-weight: 300;
 }
 
-
 .news-item {
-  background: var(--color-text-light);
+  background: var(--color-bg-light);
   padding: var(--space-lg);
   margin: var(--space-md) 0;
   border-radius: var(--radius-sm);
@@ -340,7 +339,6 @@ body {
   margin: 0;
 }
 
-
 .contacts {
   background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-light-darken) 100%);
   padding: 25px;
@@ -366,7 +364,6 @@ body {
   margin-bottom: var(--space-md);
 }
 
-
 .button {
   padding: 12px 25px;
   border-radius: var(--radius-circle);
@@ -379,7 +376,6 @@ body {
   display: inline-block;
 }
 
-
 .button--primary {
   background: linear-gradient(135deg, #fe4f4f 0%, #b200fe 100%);
   color: var(--color-text-light);
@@ -387,13 +383,12 @@ body {
 }
 
 .button--primary:hover {
-  transform: scale(0.95); 
+  transform: scale(0.95);
   box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
 }
 
-
 .button--secondary {
-  background: var(--color-text-light);
+  background: var(--color-bg-light);
   color: var(--color-text-dark);
   margin: 0px 15px;
   box-shadow: 0 10px 15px rgba(79, 172, 254, 0.3);
@@ -401,12 +396,9 @@ body {
 }
 
 .button--secondary:hover {
-  transform: translateY(-3px); 
+  transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
 }
-
-
-
 
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.6);
@@ -463,7 +455,7 @@ dialog {
   border-radius: var(--radius-sm);
   font-size: 1rem;
   transition: border-color 0.3s ease;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 .form-group__input:focus,
@@ -505,7 +497,6 @@ dialog {
   }
 }
 
-
 @media (max-width: 768px) {
   .nav__list {
     flex-direction: column;
@@ -518,7 +509,7 @@ dialog {
   }
   
   .good-card {
-    max-width: 100%; 
+    max-width: 100%;
   }
 
   .main {
@@ -536,14 +527,77 @@ dialog {
 
   .button {
     width: 100%;
-    box-sizing: border-box; 
+    box-sizing: border-box;
   }
 }
-
 
 .footer {
   background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-dark-lighten) 100%);
   color: var(--color-text-light);
   text-align: center;
   padding: var(--space-lg);
+}
+
+/* Стили для темной темы */
+[data-theme="dark"] .bg-light {
+  background-color: var(--color-bg-dark) !important;
+  color: var(--color-text-light);
+}
+
+[data-theme="dark"] .card {
+  background-color: var(--color-bg-dark-lighten);
+  border-color: var(--color-border);
+  color: var(--color-text-light);
+}
+
+[data-theme="dark"] .card-body {
+  color: var(--color-text-light);
+}
+
+[data-theme="dark"] .card-header.bg-light {
+  background-color: var(--color-bg-dark) !important;
+  color: var(--color-text-light);
+}
+
+[data-theme="dark"] .text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+[data-theme="dark"] .text-primary {
+  color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .bg-dark {
+  background-color: var(--color-bg-dark) !important;
+}
+
+[data-theme="dark"] .bg-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%) !important;
+}
+
+.theme-toggle {
+    color: var(--color-text-light) !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer;
+    padding: 8px 12px !important;
+    border-radius: var(--radius-circle) !important;
+    transition: var(--transition) !important;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: scale(1.1);
+}
+
+.navbar-nav .theme-toggle {
+    padding: 8px 15px !important;
+}
+
+/* Плавные переходы */
+body, .page, .header, .nav, .main, .about, .contacts, .news-item, 
+.experience-card, .good-card, .card, .bg-light, .bg-dark,
+.profile__title, .profile__name, .about__title, .skills__title,
+.experience__title, .goods-grid__title, .news-list__title, .contacts__title {
+  transition: var(--transition);
 }

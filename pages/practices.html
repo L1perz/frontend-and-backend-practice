@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -19,13 +19,56 @@
                 <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
                 <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
                 <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+                <li class="nav__item">
+                    <button class="nav__link theme-toggle" onclick="toggleTheme()"
+                        style="background: none; border: none; color: var(--color-text-light); cursor: pointer;"
+                        title="Сменить тему">
+                        🌙
+                    </button>
+                </li>
             </ul>
         </nav>
         <main class="main">
-      
-    </main>  
+
+        </main>
     </div>
     <footer class="footer">© 2025 Мой сайт — Новости</footer>
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            updateThemeButtonIcon(newTheme);
+        }
+
+        function updateThemeButtonIcon(theme) {
+            const themeButtons = document.querySelectorAll('.theme-toggle');
+
+            themeButtons.forEach(button => {
+                if (button.querySelector('i')) {
+                    // Для Bootstrap иконок
+                    const iconElement = button.querySelector('i');
+                    const iconClass = theme === 'dark' ? 'bi-sun' : 'bi-moon';
+                    iconElement.className = `bi ${iconClass}`;
+                } else {
+                    // Для эмодзи
+                    const icon = theme === 'dark' ? '☀️' : '🌙';
+                    button.textContent = icon;
+                }
+            });
+        }
+
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButtonIcon(savedTheme);
+        }
+
+        document.addEventListener('DOMContentLoaded', loadTheme);
+    </script>
 </body>
 
 </html>

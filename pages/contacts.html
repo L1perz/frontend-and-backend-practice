@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Контакты — Мой сайт</title>
     <link rel="stylesheet" href="../style/styles.css">
 </head>
+
 <body>
     <div class="page">
         <header class="header">Мой сайт — Контакты</header>
@@ -16,17 +18,26 @@
                 <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
                 <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
                 <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+                <li class="nav__item">
+                    <button class="nav__link theme-toggle" onclick="toggleTheme()"
+                        style="background: none; border: none; color: var(--color-text-light); cursor: pointer;"
+                        title="Сменить тему">
+                        🌙
+                    </button>
+                </li>
             </ul>
         </nav>
 
         <main class="main">
             <h2 class="contacts__title">Связаться со мной</h2>
             <section class="contacts">
-                <p class="contacts__item"><strong>Электронная почта:</strong> <a href="mailto:gaben@valvesoftware.com">gaben@valvesoftware.com</a></p>
+                <p class="contacts__item"><strong>Электронная почта:</strong> <a
+                        href="mailto:gaben@valvesoftware.com">gaben@valvesoftware.com</a></p>
                 <p class="contacts__item"><strong>Адрес:</strong> город Бельвью, округ Кинг, штат Вашингтон</p>
                 <p class="contacts__item">
                     <strong>Телефон:</strong>
-                    <button onclick="location.href='tel:+71234567890'" class="button button--secondary">Позвонить</button>
+                    <button onclick="location.href='tel:+71234567890'"
+                        class="button button--secondary">Позвонить</button>
                 </p>
                 <p class="contacts__item">
                     <button onclick="contactModal.showModal()" class="button button--primary">Связаться с нами</button>
@@ -34,7 +45,7 @@
             </section>
         </main>
     </div>
-    
+
     <footer class="footer">© 2025 Мой сайт — Контакты</footer>
 
     <dialog id="contactModal">
@@ -45,18 +56,24 @@
             <form id="feedbackForm" method="dialog">
                 <div class="form-group">
                     <label class="form-group__label" for="name">Имя <span class="form-group__required">*</span></label>
-                    <input class="form-group__input" type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                    <input class="form-group__input" type="text" id="name" name="name" required
+                        placeholder="Введите ваше имя">
                 </div>
                 <div class="form-group">
-                    <label class="form-group__label" for="phone">Телефон <span class="form-group__required">*</span></label>
-                    <input class="form-group__input" type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                    <label class="form-group__label" for="phone">Телефон <span
+                            class="form-group__required">*</span></label>
+                    <input class="form-group__input" type="tel" id="phone" name="phone" required
+                        placeholder="+7 (XXX) XXX-XX-XX">
                 </div>
                 <div class="form-group">
-                    <label class="form-group__label" for="email">Электронная почта <span class="form-group__required">*</span></label>
-                    <input class="form-group__input" type="email" id="email" name="email" required placeholder="example@mail.ru">
+                    <label class="form-group__label" for="email">Электронная почта <span
+                            class="form-group__required">*</span></label>
+                    <input class="form-group__input" type="email" id="email" name="email" required
+                        placeholder="example@mail.ru">
                 </div>
                 <div class="form-group">
-                    <label class="form-group__label" for="category">Категория обращения <span class="form-group__required">*</span></label>
+                    <label class="form-group__label" for="category">Категория обращения <span
+                            class="form-group__required">*</span></label>
                     <select class="form-group__select" id="category" name="category" required>
                         <option value="">Выберите категорию</option>
                         <option value="technical">Техническая поддержка</option>
@@ -68,41 +85,81 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="form-group__label" for="message">Текст обращения <span class="form-group__required">*</span></label>
-                    <textarea class="form-group__textarea" id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                    <label class="form-group__label" for="message">Текст обращения <span
+                            class="form-group__required">*</span></label>
+                    <textarea class="form-group__textarea" id="message" name="message" required
+                        placeholder="Опишите вашу проблему или вопрос..."></textarea>
                 </div>
                 <div class="modal__actions">
-                    <button type="submit" class="button button--secondary">Отмена</button>
+                    <button type="submit" class="button button--secondary" onclick="contactModal.close()">Отмена
+                    </button>
                     <button type="button" class="button button--primary" onclick="submitForm()">Отправить</button>
                 </div>
             </form>
         </div>
     </dialog>
-    
+
     <script>
-      function submitForm() {
-        const form = document.getElementById('feedbackForm');
-        if (!form.checkValidity()) {
-          form.reportValidity();
-          return;
+        function submitForm() {
+            const form = document.getElementById('feedbackForm');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            console.log('Данные формы:', data);
+            alert('Спасибо! Ваше обращение отправлено.');
+            contactModal.close();
+            form.reset();
         }
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        console.log('Данные формы:', data);
-        alert('Спасибо! Ваше обращение отправлено.');
-        contactModal.close();
-        form.reset();
-      }
-      document.getElementById('contactModal').addEventListener('click', function(event) {
-        if (event.target === this) {
-          this.close();
+        document.getElementById('contactModal').addEventListener('click', function (event) {
+            if (event.target === this) {
+                this.close();
+            }
+        });
+        document.getElementById('feedbackForm').addEventListener('keypress', function (event) {
+            if (event.key === 'Enter' && event.target.type !== 'textarea') {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            updateThemeButtonIcon(newTheme);
         }
-      });
-      document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
-        if (event.key === 'Enter' && event.target.type !== 'textarea') {
-          event.preventDefault();
+
+        function updateThemeButtonIcon(theme) {
+            const themeButtons = document.querySelectorAll('.theme-toggle');
+
+            themeButtons.forEach(button => {
+                if (button.querySelector('i')) {
+                    // Для Bootstrap иконок
+                    const iconElement = button.querySelector('i');
+                    const iconClass = theme === 'dark' ? 'bi-sun' : 'bi-moon';
+                    iconElement.className = `bi ${iconClass}`;
+                } else {
+                    // Для эмодзи
+                    const icon = theme === 'dark' ? '☀️' : '🌙';
+                    button.textContent = icon;
+                }
+            });
         }
-      });
+
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButtonIcon(savedTheme);
+        }
+
+        document.addEventListener('DOMContentLoaded', loadTheme);
     </script>
 </body>
+
 </html>

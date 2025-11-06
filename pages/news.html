@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Новости — Мой сайт</title>
     <link rel="stylesheet" href="../style/styles.css">
 </head>
+
 <body>
     <div class="page">
         <header class="header">Мой сайт — Новости</header>
@@ -16,7 +18,15 @@
                 <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
                 <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
                 <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+                <li class="nav__item">
+                    <button class="nav__link theme-toggle" onclick="toggleTheme()"
+                        style="background: none; border: none; color: var(--color-text-light); cursor: pointer;"
+                        title="Сменить тему">
+                        🌙
+                    </button>
+                </li>
             </ul>
+
         </nav>
 
         <main class="main">
@@ -25,24 +35,65 @@
                 <article class="news-item">
                     <h3 class="news-item__title">Team Spirit одержала победу на The International 2025</h3>
                     <p class="news-item__meta">Опубликовано: 21 октября 2025 — Автор: Иванов Д.Д.</p>
-                    <p class="news-item__text">Российская команда Team Spirit выиграла главный турнир по Dota 2 — The International 2025. В финале они
+                    <p class="news-item__text">Российская команда Team Spirit выиграла главный турнир по Dota 2 — The
+                        International 2025. В финале они
                         обыграли PSG.LGD со счётом 3:2 и забрали главный приз в размере 40 миллионов долларов.</p>
                 </article>
                 <article class="news-item">
                     <h3 class="news-item__title">Новый патч в CS2</h3>
                     <p class="news-item__meta">Опубликовано: 19 октября 2025 — Автор: Сидоров А.А.</p>
-                    <p class="news-item__text">Valve выпустила небольшое обновление для Counter-Strike 2, в котором разрешили создавать ножи из 5 тайных скинов. Крупные трейдеры собираются навсегда покинуть рынок скинов.</p>
+                    <p class="news-item__text">Valve выпустила небольшое обновление для Counter-Strike 2, в котором
+                        разрешили создавать ножи из 5 тайных скинов. Крупные трейдеры собираются навсегда покинуть рынок
+                        скинов.</p>
                 </article>
                 <article class="news-item">
                     <h3 class="news-item__title">NAVI объявили новый состав по Valorant</h3>
                     <p class="news-item__meta">Опубликовано: 17 октября 2025 — Автор: Кузнецова Е.В.</p>
-                    <p class="news-item__text">Организация Natus Vincere представила обновлённый ростер по Valorant. В состав вошли молодые таланты из
+                    <p class="news-item__text">Организация Natus Vincere представила обновлённый ростер по Valorant. В
+                        состав вошли молодые таланты из
                         Европы, а тренером назначен бывший капитан команды Fnatic.</p>
                 </article>
             </section>
         </main>
-        
+
         <footer class="footer">© 2025 Мой сайт — Новости</footer>
     </div>
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            updateThemeButtonIcon(newTheme);
+        }
+
+        function updateThemeButtonIcon(theme) {
+            const themeButtons = document.querySelectorAll('.theme-toggle');
+
+            themeButtons.forEach(button => {
+                if (button.querySelector('i')) {
+                    // Для Bootstrap иконок
+                    const iconElement = button.querySelector('i');
+                    const iconClass = theme === 'dark' ? 'bi-sun' : 'bi-moon';
+                    iconElement.className = `bi ${iconClass}`;
+                } else {
+                    // Для эмодзи
+                    const icon = theme === 'dark' ? '☀️' : '🌙';
+                    button.textContent = icon;
+                }
+            });
+        }
+
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButtonIcon(savedTheme);
+        }
+
+        document.addEventListener('DOMContentLoaded', loadTheme);
+    </script>
 </body>
+
 </html>
