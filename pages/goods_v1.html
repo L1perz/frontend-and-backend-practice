@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Товары — Мой сайт</title>
     <link rel="stylesheet" href="../style/styles.css">
 </head>
+
 <body>
     <div class="page">
         <header class="header">Мой сайт — Товары</header>
@@ -16,6 +18,13 @@
                 <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
                 <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
                 <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+                <li class="nav__item">
+                    <button class="nav__link theme-toggle" onclick="toggleTheme()"
+                        style="background: none; border: none; color: var(--color-text-light); cursor: pointer;"
+                        title="Сменить тему">
+                        🌙
+                    </button>
+                </li>
             </ul>
         </nav>
 
@@ -25,25 +34,75 @@
                 <article class="good-card">
                     <img class="good-card__image" src="../images/goods1.png" alt="Товар 1">
                     <h3 class="good-card__title">Phantom Assassin</h3>
-                    <p class="good-card__desc">Краткое описание товара. Большой урон и хорошая мобильность, но слабая живучесть.</p>
-                    <p class="good-card__price">Цена: <strong>1 200 ₽</strong></p>
+                    <p class="good-card__desc">Краткое описание товара. Большой урон и хорошая мобильность, но слабая
+                        живучесть.</p>
+                    <p class="good-card__price"> <strong>1 200 ₽</strong></p>
                 </article>
                 <article class="good-card">
                     <img class="good-card__image" src="../images/goods2.png" alt="Товар 2">
                     <h3 class="good-card__title">Pudge</h3>
                     <p class="good-card__desc">Удобный и практичный товар для повседневного использования.</p>
-                    <p class="good-card__price">Цена: <strong>2 500 ₽</strong></p>
+                    <p class="good-card__price"> <strong>2 500 ₽</strong></p>
                 </article>
                 <article class="good-card">
                     <img class="good-card__image" src="../images/goods3.png" alt="Товар 3">
                     <h3 class="good-card__title">Wards</h3>
                     <p class="good-card__desc">Купил= молодец, не купил = не молодец.</p>
-                    <p class="good-card__price">Цена: <strong>799 ₽</strong></p>
+                    <p class="good-card__price">
+                        <span class="old-price">999 ₽</span>
+                        <strong class="new-price">799 ₽</strong>
+                    </p>
                 </article>
             </section>
         </main>
-        
-        <footer class="footer">© 2025 Мой сайт — Товары</footer>
+
+
     </div>
+    <footer class="footer">© 2025 Мой сайт — Товары</footer>
+    <script>
+         document.querySelectorAll('.good-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('good-card--selected');
+            });
+        });
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            updateThemeButtonIcon(newTheme);
+        }
+
+        function updateThemeButtonIcon(theme) {
+            const themeButtons = document.querySelectorAll('.theme-toggle');
+
+            themeButtons.forEach(button => {
+                if (button.querySelector('i')) {
+                    // Для Bootstrap иконок
+                    const iconElement = button.querySelector('i');
+                    const iconClass = theme === 'dark' ? 'bi-sun' : 'bi-moon';
+                    iconElement.className = `bi ${iconClass}`;
+                } else {
+                    // Для эмодзи
+                    const icon = theme === 'dark' ? '☀️' : '🌙';
+                    button.textContent = icon;
+                }
+            });
+        }
+
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButtonIcon(savedTheme);
+        }
+
+        document.addEventListener('DOMContentLoaded', loadTheme);
+
+       
+
+    </script>
 </body>
+
 </html>
